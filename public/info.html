@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Playfair+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <title>Is a Dog Day</title>
+  </head>
+  <body onload="DisplayInfo()">
+    <div>
+      <div onload="DisplayPhoto()" class="img_container">
+        <img src="" alt="" class="imge" />
+      </div>
+      <div>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <script src="inf.js"></script>
+</html>
+<!-- <script>
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  var requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow",
+  };
+
+  var requestOptionsImage = {
+    method: "GET",
+    redirect: "follow",
+  };
+
+  async function DisplayPhoto() {
+    var value = localStorage.getItem("dogId");
+
+    const dog = await fetchDogById(value);
+
+    const response = await fetch(
+      "https://api.thedogapi.com/v1/images/" + dog.reference_image_id,
+      requestOptionsImage
+    );
+    const data = await response.json();
+    const image = document.querySelector("imge");
+    console.log(data.url);
+    image.setAttribute("src", data.url);
+  }
+
+  async function fetchDogById(id) {
+    const response = await fetch(
+      "https://api.thedogapi.com/v1/breeds/" + id,
+      requestOptions
+    );
+    return await response.json();
+  }
+  function DisplayInfo() {}
+</script> -->
